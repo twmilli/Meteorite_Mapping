@@ -5,3 +5,17 @@
 body{
   background-color: #47a5fc;
 }
+
+.hoverinfo{
+  padding: 1rem !important;
+  color: white;
+  background-color: rgba(0,0,0,0.8) !important;
+  border-radius: 4px !important;
+  border: none !important;
+
+  h3{
+    text-align:center;
+    padding: 5px;
+    margin: auto;
+  }
+}

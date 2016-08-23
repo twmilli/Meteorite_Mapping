@@ -17,9 +17,26 @@ var map = new Datamap({
     '#bcbd22':'#bcbd22',
     '#17becf':'#17becf'
   },
+  setProjection: function(element){
+    var projection = d3.geo.equirectangular()
+    .scale(300)
+    .center([-50,30]);
+
+    var path = d3.geo.path()
+    .projection(projection);
+
+    return {path: path, projection: projection};
+  },
+
+
+  responsive: true,
   bubblesConfig:{
 
   }
+  });
+
+  window.addEventListener('resive', function(){
+    map.resize();
   });
 
 
@@ -33,7 +50,7 @@ d3.json(URL, function(error, data){
   }
 
   map.svg.call(d3.behavior.zoom()
-  .scaleExtent([1,4])
+  .scaleExtent([1/2,4])
   .on('zoom', zoomed));
 
   function zoomed(){

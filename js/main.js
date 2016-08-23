@@ -62,7 +62,7 @@ d3.json(URL, function(error, data){
     d.properties.mass = +d.properties.mass
     d.properties.year = new Date(d.properties.year)
   });
-  var radius_scale = d3.scale.sqrt().range([0,50]);
+  var radius_scale = d3.scale.sqrt().range([1,75]);
   colorScale.domain(d3.extent(data,function(d){
     return d.properties.year;
   }));
